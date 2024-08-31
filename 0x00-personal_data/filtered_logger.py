@@ -9,5 +9,5 @@ def filter_datum(fields: List[str], redaction: str,
     """filters data and returns a message"""
     for key in fields:
         message = re.sub(rf"{key}=[^{separator}]*",
-                         f'{key}={redaction}{separator}', message)
+                         f'{key}={redaction}', message)
     return message
