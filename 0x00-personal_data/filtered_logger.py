@@ -59,3 +59,19 @@ def get_db() -> mysql.connector.connection.MySQLConnection:
                                    password=passwd, database=db_name)
 
     return conn
+
+
+def main() -> None:
+    """ Read and filter data """
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute('SELECT * FROM users;')
+
+    for user in cursor:
+        msg = f"name={user[0]}; email={user[1]}; phone={user[2]}; " +\
+            f"ssn={user[3]}; password={user[4]};ip={user[5]}; " +\
+            f"last_login={user[6]}; user_agent={user[7]};"
+        print(message)
+
+    cursor.close()
+    db.close()
