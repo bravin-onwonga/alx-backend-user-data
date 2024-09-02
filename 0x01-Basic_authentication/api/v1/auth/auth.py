@@ -13,7 +13,19 @@ class Auth:
         Returns
             False
         """
-        return False
+        if not path:
+            return True
+
+        last_idx = len(path) - 1
+
+        if path[last_idx] != '/':
+            path = path + '/'
+
+        if excluded_paths == [] or excluded_paths is None:
+            return True
+        if path in excluded_paths:
+            return False
+        return True
 
     def authorization_header(self, request=None) -> str:
         """Returns None"""
