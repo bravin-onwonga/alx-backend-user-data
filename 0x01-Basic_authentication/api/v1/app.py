@@ -45,7 +45,7 @@ def forbidden(error) -> str:
 
 
 @app.before_request
-def before_request_func():
+def before_request_func() -> None:
     """ Function executed before any request """
     if auth:
         excluded_paths = ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/']
