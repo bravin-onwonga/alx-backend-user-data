@@ -48,7 +48,9 @@ def forbidden(error) -> str:
 def before_request_func() -> None:
     """ Function executed before any request """
     if auth:
-        excluded_paths = ['/api/v1/status/', '/api/v1/unauthorized/', '/api/v1/forbidden/']
+        excluded_paths = ['/api/v1/status/',
+                          '/api/v1/unauthorized/',
+                          '/api/v1/forbidden/']
 
         if not auth.require_auth(request.path, excluded_paths):
             return
