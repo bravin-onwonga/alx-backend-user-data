@@ -3,12 +3,12 @@
 """
 import hashlib
 from models.base import Base
+from typing import List
 
 
 class User(Base):
     """ User class
     """
-
     def __init__(self, *args: list, **kwargs: dict):
         """ Initialize a User instance
         """
