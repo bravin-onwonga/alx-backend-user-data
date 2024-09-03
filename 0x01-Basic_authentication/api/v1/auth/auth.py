@@ -38,7 +38,6 @@ class Auth:
             return None
         return authorization_str
 
-
     def current_user(self, request=None) -> TypeVar('User'):
         """Returns None """
         return None
