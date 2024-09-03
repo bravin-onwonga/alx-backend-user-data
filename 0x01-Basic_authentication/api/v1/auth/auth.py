@@ -13,6 +13,8 @@ class Auth:
         Returns
             False
         """
+        import re
+
         if not path:
             return True
 
@@ -23,8 +25,9 @@ class Auth:
 
         if excluded_paths == [] or excluded_paths is None:
             return True
-        if path in excluded_paths:
-            return False
+        for ex_path in excluded_paths:
+            if re.match(ex_path, path):
+                return False
         return True
 
     def authorization_header(self, request=None) -> str:
