@@ -2,6 +2,7 @@
 """ Hash password, Register user, Credentials validation, Generate UUIDs,
     Find user by session ID, Destroy session, Generate reset password token,
     Update password """
+
 import bcrypt
 from sqlalchemy.orm.exc import NoResultFound
 from uuid import uuid4
