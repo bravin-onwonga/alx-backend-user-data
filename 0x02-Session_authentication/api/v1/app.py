@@ -61,6 +61,9 @@ def before_request_func() -> None:
 
         request.current_user = auth.current_user(request)
 
+        if not(request.current_user):
+            abort((403))
+
 
 if __name__ == "__main__":
     host = getenv("API_HOST", "0.0.0.0")
