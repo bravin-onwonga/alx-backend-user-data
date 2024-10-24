@@ -14,4 +14,4 @@ class SessionAuth(Auth):
             return None
         key = uid()
         self.user_id_by_session_id[key] = user_id
-        return key    
+        return key
